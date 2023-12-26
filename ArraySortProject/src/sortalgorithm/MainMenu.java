@@ -51,6 +51,8 @@ public class MainMenu {
                 display();
                 break;
         }
+
+        scanner.close();
     }
 }
 
