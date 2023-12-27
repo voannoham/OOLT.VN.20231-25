@@ -23,6 +23,11 @@ public class RadixSort extends SortAlgorithm {
     }
 
     private int getMax(int[] arr) {
+        if (arr.length == 0) {
+            // Handle the case of an empty array
+            return 0; // You can choose an appropriate default value
+        }
+
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
