@@ -28,7 +28,8 @@ public class CountingSort extends SortAlgorithm {
         System.out.println("Initial count:");
         displayCount(count);
 
-        // Bước 2: Chuyển đổi count[i] để nó chứa vị trí thực sự của phần tử này trong đầu ra
+        // Bước 2: Chuyển đổi count[i] để nó chứa vị trí thực sự của phần tử này trong
+        // đầu ra
         for (int i = 1; i <= max; i++) {
             count[i] += count[i - 1];
         }
@@ -54,6 +55,11 @@ public class CountingSort extends SortAlgorithm {
     }
 
     private int getMax(int[] arr) {
+        if (arr.length == 0) {
+            // Handle the case of an empty array
+            return 0; // You can choose an appropriate default value
+        }
+
         int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
