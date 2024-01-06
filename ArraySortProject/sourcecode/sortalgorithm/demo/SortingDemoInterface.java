@@ -50,6 +50,7 @@ public class SortingDemoInterface {
         System.out.println("2. Input Array From User");
 
         int creationChoice = scanner.nextInt();
+        scanner.nextLine();
 
         switch (creationChoice) {
             case 1:

@@ -14,11 +14,6 @@ public class MergeSort extends SortAlgorithm {
         mergeSort(array, 0, array.length - 1);
     }
 
-    @Override
-    public SortAlgorithm newInstance(int[] newArray) {
-        return new MergeSort(newArray);
-    }
-
     private void mergeSort(int[] array, int left, int right) {
         if (left < right) {
             // Tìm điểm giữa mảng
@@ -72,5 +67,9 @@ public class MergeSort extends SortAlgorithm {
 
         // Hiển thị mảng sau mỗi bước
         displaySteps();
+    }
+    @Override
+    public SortAlgorithm newInstance(int[] newArray) {
+        return new MergeSort(newArray);
     }
 }
