@@ -39,7 +39,7 @@ public class CountingSort extends SortAlgorithm {
         displayCount(count);
 
         // Bước 3: Xây dựng mảng đầu ra
-        for (int i = n - 1; i >= 0; i--) {
+        for (int i = 0; i < n; i++) {
             output[count[arr[i]] - 1] = arr[i];
             count[arr[i]]--;
 
