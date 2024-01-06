@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import sortalgorithm.SortAlgorithm;
-import sortalgorithm.MainMenu;
+import view.MainMenu;
 
 public class SortingDemoInterface {
     private SortAlgorithm sortAlgorithm;
