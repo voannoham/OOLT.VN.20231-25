@@ -1,58 +1,57 @@
 package view;
 
-import java.util.Scanner;
-import sortalgorithm.merge.MergeSort;
-import sortalgorithm.demo.SortingDemoInterface;
-import sortalgorithm.counting.CountingSort;
-import sortalgorithm.radix.RadixSort;
-public class MainMenu {
-    public void display() {
-        System.out.println("----- Sorting Algorithm Demo -----");
-        System.out.println("1. Merge Sort");
-        System.out.println("2. Counting Sort");
-        System.out.println("3. Radix Sort");
-        System.out.println("4. Help");
-        System.out.println("5. Quit");
+import java.awt.BorderLayout;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 
-        Scanner scanner = new Scanner(System.in);
-        int choice = scanner.nextInt();
+import controller.ExitListener;
+import controller.HelpListener;
+import controller.MergeSortListener;
 
-        switch (choice) {
-            case 1:
-                int[] array1 = {};
-                MergeSort mergeSort = new MergeSort(array1);
-                SortingDemoInterface mergeSortInterface = new SortingDemoInterface(mergeSort);
-                mergeSortInterface.display();
-                break;
-            case 2:
-                int[] array2 = {};
-                CountingSort countingSort = new CountingSort(array2);
-                SortingDemoInterface countingSortInterface = new SortingDemoInterface(countingSort);
-                countingSortInterface.display();
-            case 3:
-                int[] array3 ={};
-                RadixSort radixSort = new RadixSort(array3);
-                SortingDemoInterface radixSortInterface= new SortingDemoInterface(radixSort);
-                radixSortInterface.display();
-            case 4:
-                display();
-                break;
-            case 5:
-                System.out.println("Are you sure you want to quit? (Y/N)");
-                String confirm = scanner.next();
-                if (confirm.equalsIgnoreCase("Y")) {
-                    System.exit(0);
-                } else {
-                    display();
-                }
-                break;
-            default:
-                System.out.println("Invalid choice. Please try again.");
-                display();
-                break;
-        }
+public class MainMenu extends JFrame{
+    JButton mergeSort;
+    JButton countingSort;
+    JButton radixSort;
+    JButton help;
+    JButton quit;
+    //constructor
+    public MainMenu(){
+        this.init();
+    }
+    public void init(){
+        //set MainMenu frame
+        this.setTitle("sorting visualizer");
+        this.setSize(1000,600);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        
+        //create button
+        mergeSort = new JButton("merge sort");
+        countingSort = new JButton("counting sort");
+        radixSort = new JButton("radix sort");
+        help = new JButton("help");
+        quit = new JButton("quit");
+        
+        //even when click button
+        ActionListener exitListener = new ExitListener();
+        quit.addActionListener(exitListener);
+        ActionListener helpListener = new HelpListener();
+        help.addActionListener(helpListener);
+        ActionListener mergeSortListener = new MergeSortListener();
+        mergeSort.addActionListener(mergeSortListener);
 
-        scanner.close();
+        JPanel panel = new JPanel();
+
+        panel.add(mergeSort);
+        panel.add(countingSort);
+        panel.add(radixSort);
+        panel.add(help);
+        panel.add(quit);
+        
+        this.setLayout(new BorderLayout());
+        this.add(panel,BorderLayout.CENTER);
+        
     }
 }
-
