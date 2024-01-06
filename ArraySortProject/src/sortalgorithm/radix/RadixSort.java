@@ -18,7 +18,7 @@ public class RadixSort extends SortAlgorithm {
         int max = getMax(arr);
 
         for (int exp = 1; max / exp > 0; exp *= 10) {
-            countingSort(arr, exp);
+            countingSort(arr, exp, exp > max / 10); // Pass a boolean indicating whether it's the last step
         }
     }
 
@@ -37,7 +37,7 @@ public class RadixSort extends SortAlgorithm {
         return max;
     }
 
-    private void countingSort(int[] arr, int exp) {
+    private void countingSort(int[] arr, int exp, boolean isLastStep) {
         int n = arr.length;
         int[] output = new int[n];
         int[] count = new int[10];
@@ -47,14 +47,14 @@ public class RadixSort extends SortAlgorithm {
             count[(arr[i] / exp) % 10]++;
         }
 
-        System.out.println("Count array after counting: " + Arrays.toString(count));
+        System.out.println("Count array after counting (exp=" + exp + "): " + Arrays.toString(count));
 
         // Step 2: Updating count to get actual positions
         for (int i = 1; i < 10; i++) {
             count[i] += count[i - 1];
         }
 
-        System.out.println("Count array after updating: " + Arrays.toString(count));
+        System.out.println("Count array after updating (exp=" + exp + "): " + Arrays.toString(count));
 
         // Step 3: Building the output array
         for (int i = n - 1; i >= 0; i--) {
@@ -62,13 +62,20 @@ public class RadixSort extends SortAlgorithm {
             count[(arr[i] / exp) % 10]--;
         }
 
-        System.out.println("Output array after arranging: " + Arrays.toString(output));
+        System.out.println("Output array after arranging (exp=" + exp + "): " + Arrays.toString(output));
 
         // Step 4: Copying the output array back to the original array
         System.arraycopy(output, 0, arr, 0, n);
 
-        // Step 5: Display the array after each step
-        displaySteps();
+        // Step 5: Display the array after each step only if it's the last step
+        if (isLastStep) {
+            displayArray(arr);
+            System.out.println(); // Add a new line for better separation
+        }
+    }
+
+    private void displayArray(int[] array) {
+        System.out.println(Arrays.toString(array));
     }
 
     @Override
