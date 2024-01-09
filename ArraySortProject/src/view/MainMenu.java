@@ -23,7 +23,7 @@ public class MainMenu extends JFrame{
     public void init(){
         //set MainMenu frame
         this.setTitle("sorting visualizer");
-        this.setSize(1000,600);
+        this.setSize(1000,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
@@ -41,7 +41,8 @@ public class MainMenu extends JFrame{
         help.addActionListener(helpListener);
         ActionListener mergeSortListener = new MergeSortListener();
         mergeSort.addActionListener(mergeSortListener);
-
+        
+        
         JPanel panel = new JPanel();
 
         panel.add(mergeSort);

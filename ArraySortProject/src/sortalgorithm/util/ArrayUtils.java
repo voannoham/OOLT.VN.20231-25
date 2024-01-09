@@ -1,4 +1,4 @@
-package model.util;
+package sortalgorithm.util;
 
 
 public class ArrayUtils {
