@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import sortalgorithm.SortAlgorithm;
-import view.MainMenu;
+//import view.MainMenu;
 
 public class SortingDemoInterface {
     private SortAlgorithm sortAlgorithm;
@@ -34,8 +34,8 @@ public class SortingDemoInterface {
                 display();
                 break;
             case 3:
-                MainMenu mainMenu = new MainMenu();
-                mainMenu.display();
+                //MainMenu mainMenu = new MainMenu();
+                //mainMenu.display();
                 break;
             default:
                 System.out.println("Invalid choice. Please try again.");
