@@ -11,7 +11,7 @@ import sortalgorithm.util.ArrayUtils;
 
 import java.awt.Color;
 import java.awt.Graphics;
-public class MergeSortPanel extends JPanel{
+public class CountingSortPanel extends JPanel{
     SortAlgorithm sortingAlgorithm;
     JButton start; 
     double iheight;
@@ -19,7 +19,7 @@ public class MergeSortPanel extends JPanel{
     int[][] stepSortArray;
     int [][] flag;
     int[] array;
-    public MergeSortPanel(SortAlgorithm sortingAlgorithm){
+    public CountingSortPanel(SortAlgorithm sortingAlgorithm){
         
         this.sortingAlgorithm = sortingAlgorithm;
         this.stepSortArray = sortingAlgorithm.getArrayLog();
@@ -52,7 +52,7 @@ public class MergeSortPanel extends JPanel{
     }
     
     public void bubbleSortAnimate() {
-        Timer timer = new Timer(100, new ActionListener() {
+        Timer timer = new Timer(50, new ActionListener() {
             int i = 0;
             @Override
             public void actionPerformed(ActionEvent event){
