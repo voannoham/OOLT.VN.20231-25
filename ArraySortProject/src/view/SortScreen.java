@@ -11,7 +11,7 @@ import controller.BackListener;
 import controller.InputListener;
 import controller.RandomListener;
 import sortalgorithm.SortAlgorithm;
-
+import controller.InputListener;
 public abstract class SortScreen extends JFrame{
     JButton back;
     JButton start;
@@ -50,6 +50,9 @@ public abstract class SortScreen extends JFrame{
 
         ActionListener randomListener = new RandomListener(sortingAlgorithm);
         random.addActionListener(randomListener);
+        ActionListener inputListener = new InputListener(sortingAlgorithm);
+        input.addActionListener(inputListener);
+
         
         ActionListener backActionListener = new BackListener();
         back.addActionListener(backActionListener);

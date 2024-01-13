@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import controller.CountingSortListener;
 import controller.ExitListener;
 import controller.HelpListener;
 import controller.MergeSortListener;
@@ -42,11 +43,17 @@ public class MainMenu extends JFrame{
         help.addActionListener(helpListener);
         ActionListener mergeSortListener = new MergeSortListener();
         mergeSort.addActionListener(mergeSortListener);
+
         
         // add radix sort listener
         ActionListener radixSortListener = new RadixSortListener();
         radixSort.addActionListener(radixSortListener);
         
+
+        ActionListener countingSortListener = new CountingSortListener();
+        countingSort.addActionListener(countingSortListener);
+
+
         JPanel panel = new JPanel();
 
         panel.add(mergeSort);

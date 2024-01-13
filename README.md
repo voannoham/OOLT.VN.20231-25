@@ -5,4 +5,5 @@
 3. Duong Van Nhat -20215106: Algorithm, class diagram, report
 4. Le Cao Phong - 20215113: Algorithm, class diagram, slide
 # Link demo video
-https://drive.google.com/file/d/192WmdaU94QuqHmcXS6HTl4UcW9IyHKEH/view?usp=sharing
+
+https://drive.google.com/file/d/1_Sf0W16EFYiKQSl9IaRorkmQbpd223ws/view?usp=sharing

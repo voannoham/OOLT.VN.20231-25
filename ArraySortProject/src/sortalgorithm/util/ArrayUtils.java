@@ -23,7 +23,7 @@ public class ArrayUtils {
 	}
 	
 	public static int[][] resizeIntegers(int[][] array) {
-		int[][] resizedArray = new int[array.length * 2][array[0].length];
+		int[][] resizedArray = new int[array.length + 2][array[0].length];
 		for (int i = 0; i < array.length; i++) {
 			resizedArray[i] = array[i];
 		}

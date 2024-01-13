@@ -18,16 +18,18 @@ public class CountingSort extends SortAlgorithm {
 
         int[] count = new int[max + 1];
         int[] output = new int[n];
-
+        for (int i=0; i<n;i++){
+            output[i] = arr[i];
+        }
         // Bước 1: Đếm số lần xuất hiện của mỗi phần tử
         for (int i = 0; i < n; i++) {
             count[arr[i]]++;
         }
 
         // Hiển thị thông tin chi tiết sau mỗi bước
-        System.out.println("Initial count:");
-        displayCount(count);
-
+        //System.out.println("Initial count:");
+        //displayCount(count);
+        addLogs(output,count,new int[] {-1, -1});
         // Bước 2: Chuyển đổi count[i] để nó chứa vị trí thực sự của phần tử này trong
         // đầu ra
         for (int i = 1; i <= max; i++) {
@@ -35,8 +37,9 @@ public class CountingSort extends SortAlgorithm {
         }
 
         // Hiển thị thông tin chi tiết sau mỗi bước
-        System.out.println("After modifying count:");
-        displayCount(count);
+        //System.out.println("After modifying count:");
+        //displayCount(count);
+        addLogs(output, count, new int[]{-1,-1});
 
         // Bước 3: Xây dựng mảng đầu ra
         for (int i = 0; i < n; i++) {
@@ -44,14 +47,15 @@ public class CountingSort extends SortAlgorithm {
             count[arr[i]]--;
 
             // Hiển thị mảng sau mỗi bước
-            displayArray(output);
+            //displayArray(output);
+            addLogs(output, count, new int[]{-1,i});
         }
 
         // Bước 4: Sao chép mảng đầu ra vào mảng chính arr[]
-        System.arraycopy(output, 0, arr, 0, n);
+       // System.arraycopy(output, 0, arr, 0, n);
 
         // Hiển thị mảng cuối cùng
-        displayArray(arr);
+        //displayArray(arr);
     }
 
     private int getMax(int[] arr) {
@@ -69,7 +73,7 @@ public class CountingSort extends SortAlgorithm {
         return max;
     }
 
-    private void displayCount(int[] count) {
+    /*private void displayCount(int[] count) {
         for (int i = 0; i < count.length; i++) {
             System.out.println("Count of " + i + ": " + count[i]);
         }
@@ -80,7 +84,7 @@ public class CountingSort extends SortAlgorithm {
             System.out.print(num + " ");
         }
         System.out.println();
-    }
+    }*/
 
     @Override
     public SortAlgorithm newInstance(int[] newArray) {
