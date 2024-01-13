@@ -10,6 +10,7 @@ import controller.CountingSortListener;
 import controller.ExitListener;
 import controller.HelpListener;
 import controller.MergeSortListener;
+import controller.RadixSortListener;
 
 public class MainMenu extends JFrame{
     JButton mergeSort;
@@ -23,17 +24,17 @@ public class MainMenu extends JFrame{
     }
     public void init(){
         //set MainMenu frame
-        this.setTitle("sorting visualizer");
+        this.setTitle("Sorting Visualizer");
         this.setSize(1000,700);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
         
         //create button
-        mergeSort = new JButton("merge sort");
-        countingSort = new JButton("counting sort");
-        radixSort = new JButton("radix sort");
-        help = new JButton("help");
-        quit = new JButton("quit");
+        mergeSort = new JButton("MERGE SORT");
+        countingSort = new JButton("COUNTING SORT");
+        radixSort = new JButton("RADIX SORT");
+        help = new JButton("HELP");
+        quit = new JButton("QUIT");
         
         //even when click button
         ActionListener exitListener = new ExitListener();
@@ -42,8 +43,16 @@ public class MainMenu extends JFrame{
         help.addActionListener(helpListener);
         ActionListener mergeSortListener = new MergeSortListener();
         mergeSort.addActionListener(mergeSortListener);
+
+        
+        // add radix sort listener
+        ActionListener radixSortListener = new RadixSortListener();
+        radixSort.addActionListener(radixSortListener);
+        
+
         ActionListener countingSortListener = new CountingSortListener();
         countingSort.addActionListener(countingSortListener);
+
 
         JPanel panel = new JPanel();
 

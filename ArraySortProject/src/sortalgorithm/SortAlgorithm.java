@@ -11,7 +11,7 @@ public abstract class SortAlgorithm {
 	
 	int numSteps = 0;
 	protected int[] array;
-	//consstructor
+	//constructor
 	public SortAlgorithm(int[] array) {
 		this.array = array;
 		
