@@ -12,6 +12,7 @@ public class RadixSort extends SortAlgorithm {
     @Override
     public void sort() {
         radixSort(array);
+        addLogs(array, new int[array.length], new int[] {-1, -1});
     }
 
     private void radixSort(int[] arr) {
@@ -21,7 +22,8 @@ public class RadixSort extends SortAlgorithm {
             countingSort(arr, exp, exp > max / 10); // Pass a boolean indicating whether it's the last step
         }
     }
-
+    
+    // find max element in array
     private int getMax(int[] arr) {
         if (arr.length == 0) {
             // Handle the case of an empty array
@@ -61,6 +63,8 @@ public class RadixSort extends SortAlgorithm {
             output[count[(arr[i] / exp) % 10] - 1] = arr[i];
             count[(arr[i] / exp) % 10]--;
         }
+        addLogs(array.clone(), output.clone(), new int[]{exp});
+
 
         System.out.println("Output array after arranging (exp=" + exp + "): " + Arrays.toString(output));
 
