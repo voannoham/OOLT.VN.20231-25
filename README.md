@@ -6,4 +6,4 @@
 4. Le Cao Phong - 20215113: Algorithm, class diagram, slide
 # Link demo video
 
-https://husteduvn.sharepoint.com/sites/VANNHAM/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20240113_083544-Meeting%20Recording.mp4?web=1
+https://drive.google.com/file/d/1_Sf0W16EFYiKQSl9IaRorkmQbpd223ws/view?usp=sharing
